@@ -1,0 +1,27 @@
+# Azure Subscription and Service Principle for azurerm provider (please refer to README.md)
+subscription_id = ""
+client_id       = ""
+client_secret   = ""
+tenant_id       = ""
+
+#
+# Select an appropriate region
+#
+region = ""
+
+#
+# Set this to something meaningful. It is used as a tag in Azure
+#
+project_id         = ""
+user               = ""
+ssh_pub_key_path   = ""
+
+# you may need to change the instance types if the ones
+# listed below are not available in your region
+ctr_instance_type  = "Standard_A4m_v2"
+gtw_instance_type  = "Standard_B1ms"
+wkr_instance_type  = "Standard_A4m_v2"
+jh_instance_type   = "Standard_B2ms"
+
+# Number of workers
+worker_count       = 2

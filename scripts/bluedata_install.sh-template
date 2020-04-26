@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -e
+
+if [[ -e /homepath/bd_installed ]]
+   then
+      echo "BLUEDATA INSTALL: BlueData already installed - quitting"
+      exit 0
+   fi
+
+if [[ ! -f /homepath/installfile ]]; then
+    echo "BLUEDATA INSTALL: Downloading installation package"
+    wget -c --progress=bar -e dotbytes=10M -O "/homepath/installfile" "epicurl"
+    chmod +x "/homepath/installfile"
+else
+    echo "BLUEDATA INSTALL: Installation file already exist, skipping download"
+fi
+
+echo "BLUEDATA INSTALL: Installing required python modules for BlueData"
+sudo yum install -y python-pip
+sudo pip install --upgrade bdworkbench
+sudo pip install --quiet bs4
+
+echo "BLUEDATA INSTALL: Starting BlueData installation"
+bash "/homepath/installfile" --skipeula ### --ssl-cert /homepath/certfile --ssl-priv-key /homepath/certkeyfile
+/opt/bluedata/common-install/scripts/start_install.py -c controller_ip -k no -t 60 --routable no -d hcpdomain --cin demo-hpecp
+touch /homepath/bd_installed

@@ -1,0 +1,30 @@
+#cloud-config
+users:
+  - default
+  - name:
+    groups:
+      - sudo
+      - wheel
+    shell: /bin/bash
+    ssh-authorized-keys:
+    sudo:
+      - "ALL=(ALL) NOPASSWD:ALL"
+# package_upgrade: true
+packages:
+  - epel-release
+repo_update: true
+repo_upgrade: all
+runcmd:
+  - sudo sed -i --follow-symlinks 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+disk_setup:
+  ephemeral0:
+    table_type: gpt
+    layout: [[100,82]]
+    overwrite: true
+fs_setup:
+  - device: ephemeral0.1
+    filesystem: swap
+mounts:
+  - ["ephemeral0.1", "none", "swap", "sw", "0", "0"]
+power_state:
+  mode: reboot

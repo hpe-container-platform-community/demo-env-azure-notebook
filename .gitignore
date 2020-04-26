@@ -1,0 +1,4 @@
+.ipynb_checkpoints/
+.terraform/
+.vscode/
+my_secrets.py

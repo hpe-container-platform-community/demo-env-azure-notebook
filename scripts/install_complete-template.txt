@@ -1,0 +1,23 @@
+*********************************************************
+*      BlueData installation completed successfully     *
+*********************************************************
+SSH Private key has been downloaded to:
+private_key_name
+** PLEASE KEEP IT SECURE **
+*********************************************************
+INSTRUCTIONS for completing the BlueData installation ...
+Connect to Jumphost with RDP
+0. In the browser, navigate to the Controller URL: https://controller_private_ip
+1. At the login screen, use 'admin/admin123'
+2. Naviate to Settings -> License:
+  1. Request a license from your BlueData sales engineer contact
+  2. Upload the license
+3. Navigate to Installation tab:
+  1. Add workers private ips "worker_private_ips"
+  2. Add gateway private ip "gateway_private_ip" and dns "gateway_dns_name"
+  3. Upload "private_key_name"
+  4. Click Add hosts (enter site lock down when prompted)
+  # After a few minutes, you should see Gateway 'Installed' and Workers 'Bundle completed'
+  5. Select each Worker
+  6. Click 'Install'
+  7. Wait a few minutes
