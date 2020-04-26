@@ -5,10 +5,10 @@ Please check bluedata4 branch for EPIC v4 installation.
 
 Taken from the work of https://github.com/bluedata-community/bluedata-demo-env-aws-terraform
 
-[Download](https://github.com/bluedata-community/bluedata-demo-env-azure-terraform) the repo and use the [Jupyter Notebook](https://jupyter.org/install) to follow the instructions for a complete demo environment.
+[Download](https://github.com/hpe-container-platform-community/demo-env-azure-notebook.git) the repo and use the [Jupyter Notebook](https://jupyter.org/install) to follow the instructions for a complete demo environment.
 
 This notebook follows similar process as outlined in aws template. To get started, from a console (tested on MacOS and Windows 10):
-- `git clone https://github.com/bluedata-community/bluedata-demo-env-azure-terraform.git && cd bluedata-demo-env-azure-terraform`
+- `git clone https://github.com/hpe-container-platform-community/demo-env-azure-notebook.git && cd bluedata-demo-env-azure-terraform`
 - `python -m notebook`
 - Open [AzureDeploy.ipynb](AzureDeploy.ipynb) file and follow steps there
 
